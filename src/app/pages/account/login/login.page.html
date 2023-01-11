@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-md="4" class="ion-margin-top">
+        <form [formGroup]="form" class="animated fadeIn">
+          <p class="ion-text-center">
+            <img src="assets/icon/icon.png" alt="Dachshop" width="150">
+          </p>
+          <ion-list lines="none" class="ion-margin-bottom">
+            <ion-item>
+              <ion-input type="text" maxlength="20" placeholder="Usuário" formControlName="username"
+                autocomplete="username" (keyup.enter)="submit()">
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input [type]="hide ? 'password' : 'text'" placeholder="Senha" formControlName="password"
+                autocomplete="password" (keyup.enter)="submit()">
+              </ion-input>
+              <ion-icon color="white" class="clickable" [name]="hide ? 'eye' : 'eye-off'" (click)="toggleHide()">
+              </ion-icon>
+            </ion-item>
+          </ion-list>
+          <ion-button color="medium" expand="full" size="large" class="animated fadeIn" [disabled]="!form.valid"
+          (click)="submit()">
+            Entrar
+          </ion-button>
+          <ion-button expand="full" fill="clear" class="animated fadeIn" (click)="resetPassword()">
+            Esqueci Miha Senha
+          </ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

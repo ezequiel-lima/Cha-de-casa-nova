@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+
+<ion-content [fullscreen]="true">
+  <ion-toolbar padding>
+    <ion-title>Presentes</ion-title>
+  </ion-toolbar>
+
+  <div>
+    <ion-searchbar animated="true" placeholder="Filtrar..." [(ngModel)]="term"></ion-searchbar>
+    <ion-list>
+      <ion-item class="clickable">
+        <h1 slot="start">
+          <app-order-status-badge></app-order-status-badge>
+        </h1>
+        <h6 class="text-justify"><strong>Descrição do presente</strong></h6>
+        <ion-label slot="end">
+          <p>Restante 2</p>
+        <ion-button (click)="presentAlert()">Escolher</ion-button>
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+  </div>
+
+</ion-content>
