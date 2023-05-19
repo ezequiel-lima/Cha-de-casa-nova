@@ -7,15 +7,16 @@
 
   <div>
     <ion-searchbar animated="true" placeholder="Filtrar..." [(ngModel)]="term"></ion-searchbar>
-    <ion-list>
-      <ion-item class="clickable">
+    <ion-list *ngFor="let item of itens$ | async">
+
+      <ion-item class="clickable" *ngIf="item.status">
         <h1 slot="start">
           <app-order-status-badge></app-order-status-badge>
         </h1>
-        <h6 class="text-justify"><strong>Descrição do presente</strong></h6>
+        <h6 class="text-justify"><strong>{{item.description}}</strong></h6>
         <ion-label slot="end">
-          <p>Restante 2</p>
-        <ion-button (click)="presentAlert()">Escolher</ion-button>
+          <p>Restante {{item.amount}}</p>
+        <ion-button (click)="presentAlert(item)">Escolher</ion-button>
         </ion-label>
       </ion-item>
 

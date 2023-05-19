@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./order-status-badge.component.scss'],
 })
 export class OrderStatusBadgeComponent implements OnInit {
-  @Input() status = 'confirmed';
+  @Input() status = 'true';
 
   constructor() { }
 
