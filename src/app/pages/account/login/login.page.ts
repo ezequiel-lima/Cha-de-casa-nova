@@ -28,9 +28,7 @@ export class LoginPage implements OnInit {
   ) {
     this.form = this.fb.group({
       username: ['', Validators.compose([Validators.required])],
-      password: [
-        '',
-        Validators.compose([
+      password: ['', Validators.compose([
           Validators.minLength(6),
           Validators.maxLength(20),
           Validators.required,

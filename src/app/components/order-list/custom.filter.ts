@@ -57,5 +57,5 @@ export class CustomFilter implements PipeTransform {
       return checkInside(item, term);
     });
   }
-  
+
 }

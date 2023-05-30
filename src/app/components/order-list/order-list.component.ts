@@ -8,10 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./order-list.component.scss'],
 })
 export class OrderListComponent implements OnInit {
-  @Input() skip = 0;
-  @Input() take = 5;
-  @Input() search = '';
-  @Input() status = ['confirmed'];
+  // @Input() skip = 0;
+  // @Input() take = 5;
+  // @Input() search = '';
+  // @Input() status = ['confirmed'];
   public orders: any[] = [];
   public term: string = '';
 
@@ -19,6 +19,7 @@ export class OrderListComponent implements OnInit {
 
   ngOnInit() {
     this.service.getOrders().subscribe((res: any) => {
+      console.log(res);
       this.orders = res;
     });
   }

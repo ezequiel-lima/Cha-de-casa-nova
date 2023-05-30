@@ -7,7 +7,7 @@
 
   <div>
     <ion-searchbar animated="true" placeholder="Filtrar..." [(ngModel)]="term"></ion-searchbar>
-    <ion-list *ngFor="let item of itens$ | async">
+    <ion-list *ngFor="let item of itens$ | async | customFilter: term">
 
       <ion-item class="clickable" *ngIf="item.status">
         <h1 slot="start">
