@@ -7,7 +7,7 @@ import { Itens } from '../models/itens-model';
 })
 export class DataService {
 
-  public baseUrl = "https://localhost:7168/api/Itens";
+  public baseUrl = "https://charraiafelipeelarissa.azurewebsites.net/api/Itens";
 
   constructor(private http: HttpClient) { }
 
