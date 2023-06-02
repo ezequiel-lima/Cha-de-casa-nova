@@ -1,12 +1,12 @@
 <app-navbar></app-navbar>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="custom-background">
   <ion-toolbar padding>
     <ion-title>Presentes</ion-title>
   </ion-toolbar>
 
   <div>
-    <ion-searchbar animated="true" placeholder="Filtrar..." [(ngModel)]="term"></ion-searchbar>
+    <ion-searchbar animated="true" placeholder="Pesquisar Presente" [(ngModel)]="term"></ion-searchbar>
     <ion-list *ngFor="let item of itens$ | async | customFilter: term">
 
       <ion-item class="clickable" *ngIf="item.status">

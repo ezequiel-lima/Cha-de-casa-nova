@@ -38,6 +38,8 @@
 }
 
 .clickable {
+  // itens da lista
+  --background: #2b2005
   cursor: pointer;
   transition-duration: 0.5s;
   transition: transform 0.5s;
@@ -45,7 +47,50 @@
 
 .clickable:hover {
   background-color: rgba(0, 0, 0, 0.1);
-  transform: scale(1.02);
+  transform: scale(1.01);
   transition: background-color 1s;
   transition: transform 0.5s;
+}
+
+ion-content.custom-background {
+  --background: url("../src/assets/fundoxadrez.png") repeat;
+}
+
+.md body {
+  --ion-toolbar-background: linear-gradient(to right, #fdf1d1, #f9f2e0);
+}
+
+ion-title {
+  color: #2b2005;
+}
+
+.searchbar-input.sc-ion-searchbar-md {
+  background: #2b2005;
+}
+
+//itens da lista
+ion-list.md.list-md.hydrated {
+  background: #2b2005;
+}
+
+ion-badge.ion-color.ion-color-primary.md.hydrated {
+  background: #fdf1d1;
+}
+
+//Alert
+.alert-wrapper.sc-ion-alert-md {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: var(--width);
+  min-width: var(--min-width);
+  max-width: var(--max-width);
+  height: var(--height);
+  min-height: var(--min-height);
+  max-height: var(--max-height);
+  background: #2b2005;
+  contain: content;
+  opacity: 0;
+  z-index: 10;
 }
