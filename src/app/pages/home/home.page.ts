@@ -1,11 +1,12 @@
 import { Router } from '@angular/router';
-import { Component, NgZone, ViewChild  } from '@angular/core';
-import { AlertController, IonButtons, IonModal, NavController } from '@ionic/angular';
+import { Component, NgZone, ViewChild } from '@angular/core';
+import { ModalController, IonButtons, IonModal, NavController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { Itens } from 'src/app/models/itens-model';
 import { DataService } from 'src/app/services/data.service';
 import { OverlayEventDetail } from '@ionic/core/components';
 import { ItensName } from 'src/app/models/itensName-model';
+import { ItemModalComponent } from 'src/app/components/item-modal/item-modal.component';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,7 @@ export class HomePage {
   public itens$!: Observable<Itens[]>;
 
   constructor(
-    private alertController: AlertController,
+    private modalController: ModalController,
     private data: DataService,
     private router: Router,
     private ngZone: NgZone) { }
@@ -30,55 +31,41 @@ export class HomePage {
     this.itens$ = this.data.getAllItens();
   }
 
-  async presentAlert(item: Itens) {
-
-    const alert = await this.alertController.create({
-      header: 'Você tem certeza que deseja doar ' + item.description,
-
-      inputs: [
-        {
-          name: 'inputValue',
-          type: 'text',
-          placeholder: 'Informe Seu Nome',
-        },
-      ],
-
-      buttons: [
-        {
-          text: 'Sim',
-          handler: (data) => {
-            const inputValue = data.inputValue;
-            if (inputValue && inputValue.trim() !== '') {
-              // O texto do input não está vazio ou nulo
-              const newItemName = new ItensName();
-              newItemName.name = inputValue;
-
-              item.itensName.push(newItemName);
-
-              this.data.updateItem(item).subscribe((data: any) => {
-                console.log('Update successful', data);
-                this.ngZone.run(() => {
-                  this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-                    this.router.navigate([this.router.url]);
-                  });
-                });
-                this.carregarItens();
-              });
-            } else {
-              // O texto do input está vazio ou nulo
-              console.log('O texto do input está vazio ou nulo');
-              // Aqui você pode exibir uma mensagem de erro ou realizar alguma ação adequada.
-            }
-          }
-        },
-        {
-          text: 'Não',
-        },
-      ],
-
+  async presentModal(item: Itens) {
+    const modal = await this.modalController.create({
+      component: ItemModalComponent,
+      componentProps: {
+        item: item
+      }
     });
 
-    await alert.present();
-  }
+    modal.onDidDismiss().then((detail: OverlayEventDetail) => {
+      if (detail.role === 'confirm') {
+        const inputValue = detail.data;
+        if (inputValue && inputValue.trim() !== '') {
+          // O texto do input não está vazio ou nulo
+          const newItemName = new ItensName();
+          newItemName.name = inputValue;
 
+          item.itensName.push(newItemName);
+
+          this.data.updateItem(item).subscribe((data: any) => {
+            console.log('Update successful', data);
+            this.ngZone.run(() => {
+              this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+                this.router.navigate([this.router.url]);
+              });
+            });
+            this.carregarItens();
+          });
+        } else {
+          // O texto do input está vazio ou nulo
+          console.log('O texto do input está vazio ou nulo');
+          // Aqui você pode exibir uma mensagem de erro ou realizar alguma ação adequada.
+        }
+      }
+    });
+
+    return await modal.present();
+  }
 }

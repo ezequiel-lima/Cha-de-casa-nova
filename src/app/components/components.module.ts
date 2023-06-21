@@ -9,6 +9,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { ItemModalComponent } from './item-modal/item-modal.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { IonicModule } from '@ionic/angular';
     UserCardComponent,
     OrderListComponent,
     OrderStatusBadgeComponent,
-    CustomFilter
+    CustomFilter,
+    ItemModalComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,8 @@ import { IonicModule } from '@ionic/angular';
     UserCardComponent,
     OrderListComponent,
     OrderStatusBadgeComponent,
-    CustomFilter
+    CustomFilter,
+    ItemModalComponent
   ]
 })
 export class ComponentsModule { }

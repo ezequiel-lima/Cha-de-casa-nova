@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Confirmação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Informe seu nome</ion-label>
+      <ion-input [(ngModel)]="inputValue" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-row>
+    <ion-col>
+      <ion-button expand="block" color="light" (click)="cancel()">Cancelar</ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button expand="block" color="primary" (click)="confirm()">Confirmar</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

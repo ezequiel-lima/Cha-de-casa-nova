@@ -57,7 +57,9 @@ ion-content.custom-background {
 }
 
 .md body {
+  --ion-background-color: url("../src/assets/fundoxadrez.png") repeat;
   --ion-toolbar-background: linear-gradient(to right, #f9f2e0, #e9dbb5);
+  --ion-item-background: #f9f2e0;
 }
 
 ion-title {
