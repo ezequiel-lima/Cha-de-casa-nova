@@ -53,31 +53,31 @@
 }
 
 ion-content.custom-background {
-  --background: url("../src/assets/fundoxadrez.png") repeat;
+  --background: url("../src/assets/fundoxadrez3.png") repeat;
 }
 
 .md body {
-  --ion-background-color: url("../src/assets/fundoxadrez.png") repeat;
-  --ion-toolbar-background: linear-gradient(to right, #f9f2e0, #e9dbb5);
-  --ion-item-background: #f9f2e0;
+  --ion-background-color: url("../src/assets/fundoxadrez3.png") repeat;
+  --ion-toolbar-background: linear-gradient(to right, #f9eef1, #e7c1cf);
+  --ion-item-background: #f9eef1;
 }
 
 ion-title {
-  color: #2b2005;
+  color: #2b0513;
 }
 
 .searchbar-input.sc-ion-searchbar-md {
-  background: #2b2005;
+  background: #2b0513;
 }
 
 //itens da lista
 ion-list.md.list-md.hydrated {
-  background: url("../src/assets/fundoxadrez.png") repeat;
+  background: url("../src/assets/fundoxadrez3.png") repeat;
 }
 
 //#fdf1d1
 ion-badge.ion-color.ion-color-primary.md.hydrated {
-  background: #2b2005;
+  background: #2b0513;
 }
 
 //Alert
@@ -92,14 +92,14 @@ ion-badge.ion-color.ion-color-primary.md.hydrated {
   height: var(--height);
   min-height: var(--min-height);
   max-height: var(--max-height);
-  background: #f9f2e0;
+  background: #f9eef1;
   contain: content;
   opacity: 0;
   z-index: 10;
 }
 
 .alert-title.sc-ion-alert-md {
-  color: #2b2005;
+  color: #2b0513;
   font-size: 20px;
   font-weight: 500;
 }
