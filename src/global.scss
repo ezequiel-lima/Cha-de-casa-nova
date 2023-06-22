@@ -63,11 +63,13 @@ ion-content.custom-background {
 }
 
 ion-title {
-  color: #2b0513;
+  color: #000000;
 }
 
 .searchbar-input.sc-ion-searchbar-md {
-  background: #2b0513;
+  background: linear-gradient(to right, #eedadf, #e7c1cf);
+  color:black;
+  font-weight: bolder;
 }
 
 //itens da lista
@@ -77,7 +79,7 @@ ion-list.md.list-md.hydrated {
 
 //#fdf1d1
 ion-badge.ion-color.ion-color-primary.md.hydrated {
-  background: #2b0513;
+  background: #F3BAAD;
 }
 
 //Alert
@@ -99,7 +101,12 @@ ion-badge.ion-color.ion-color-primary.md.hydrated {
 }
 
 .alert-title.sc-ion-alert-md {
-  color: #2b0513;
+  color: #F3BAAD;
   font-size: 20px;
   font-weight: 500;
+}
+
+.teste{
+  color: black;
+  font-weight: bold;
 }
