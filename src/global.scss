@@ -106,7 +106,11 @@ ion-badge.ion-color.ion-color-primary.md.hydrated {
   font-weight: 500;
 }
 
-.teste{
-  color: black;
-  font-weight: bold;
+.ion-color-light {
+  --ion-color-base: #e7c1cf !important;
+  --ion-color-base-rgb: var(--ion-color-light-rgb, 244, 245, 248) !important;
+  --ion-color-contrast: #000 !important;
+  --ion-color-contrast-rgb: var(--ion-color-light-contrast-rgb, 0, 0, 0) !important;
+  --ion-color-shade: #c19999 !important;
+  --ion-color-tint: var(--ion-color-light-tint, #f5f6f9) !important;
 }
