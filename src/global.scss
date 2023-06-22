@@ -114,3 +114,12 @@ ion-badge.ion-color.ion-color-primary.md.hydrated {
   --ion-color-shade: #c19999 !important;
   --ion-color-tint: var(--ion-color-light-tint, #f5f6f9) !important;
 }
+
+// div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+//   border: 0;
+//   border-radius: 0.25em;
+//   background: initial;
+//   background-color: #F3BAAD !important;
+//   color: #000000 !important;
+//   font-size: 1em;
+// }

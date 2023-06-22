@@ -7,6 +7,7 @@ import { DataService } from 'src/app/services/data.service';
 import { OverlayEventDetail } from '@ionic/core/components';
 import { ItensName } from 'src/app/models/itensName-model';
 import { ItemModalComponent } from 'src/app/components/item-modal/item-modal.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -50,12 +51,19 @@ export class HomePage {
           item.itensName.push(newItemName);
 
           this.data.updateItem(item).subscribe((data: any) => {
-            console.log('Update successful', data);
+
             this.ngZone.run(() => {
               this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
                 this.router.navigate([this.router.url]);
               });
             });
+            Swal.fire({
+              title: 'Obrigado por escolher o presente ' + item.description,
+              text: 'Compre o presente no lugar de sua escolha',
+              icon: 'success',
+              confirmButtonColor: '#F3BAAD',
+              focusConfirm: false
+              });
             this.carregarItens();
           });
         } else {

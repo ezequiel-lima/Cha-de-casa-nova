@@ -25,3 +25,7 @@
 #container a {
   text-decoration: none;
 }
+
+::ng-deep body.swal2-height-auto {
+  height: inherit !important;
+}
