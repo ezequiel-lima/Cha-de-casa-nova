@@ -29,3 +29,9 @@
 ::ng-deep body.swal2-height-auto {
   height: inherit !important;
 }
+
+::ng-deep ion-list {
+  display: block !important;
+  contain: inherit !important;
+  list-style-type: none !important;
+}

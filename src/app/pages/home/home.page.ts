@@ -70,7 +70,7 @@ export class HomePage {
             });
             Swal.fire({
               title: 'Obrigado por escolher o presente ' + item.description,
-              text: 'Compre o presente no lugar de sua escolha',
+              text: 'Para sua maior comodidade, escolha na loja de sua preferência',
               icon: 'success',
               confirmButtonColor: '#F3BAAD',
               focusConfirm: false
