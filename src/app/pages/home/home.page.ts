@@ -7,6 +7,7 @@ import { DataService } from 'src/app/services/data.service';
 import { OverlayEventDetail } from '@ionic/core/components';
 import { ItensName } from 'src/app/models/itensName-model';
 import { ItemModalComponent } from 'src/app/components/item-modal/item-modal.component';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,6 +16,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  public form: FormGroup;
   public term: string = '';
   public itens$!: Observable<Itens[]>;
 
@@ -22,7 +24,16 @@ export class HomePage {
     private modalController: ModalController,
     private data: DataService,
     private router: Router,
-    private ngZone: NgZone) { }
+    private ngZone: NgZone,
+    private formBuilder: FormBuilder) {
+      this.form = this.formBuilder.group({
+        itemName: ['', Validators.compose([
+          Validators.minLength(3),
+          Validators.maxLength(180),
+          Validators.required
+        ])],
+      });
+    }
 
   ngOnInit(): void {
     this.carregarItens();
