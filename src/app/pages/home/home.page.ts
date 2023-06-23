@@ -69,7 +69,7 @@ export class HomePage {
               });
             });
             Swal.fire({
-              title: 'Obrigado por escolher o presente ' + item.description,
+              title: 'Obrigado pelo presente' + item.description,
               text: 'Para sua maior comodidade, escolha na loja de sua preferência',
               icon: 'success',
               confirmButtonColor: '#F3BAAD',
